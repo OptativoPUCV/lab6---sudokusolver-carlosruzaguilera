@@ -265,3 +265,40 @@ sudoku.c:107:14: error: unused variable ‘curent’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 2123b52
+Mon 09 Oct 2023 01:28:52 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:103:16: error: implicit declaration of function ‘createtck’; did you mean ‘createStack’? [-Werror=implicit-function-declaration]
+  103 |     Stack* S = createtck();
+      |                ^~~~~~~~~
+      |                createStack
+sudoku.c:103:16: error: initialization of ‘Stack *’ {aka ‘List *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:107:9: error: unknown type name ‘Noe’; did you mean ‘Node’?
+  107 |         Noe* curent = top(S);
+      |         ^~~
+      |         Node
+sudoku.c:111:21: error: ‘current’ undeclared (first use in this function); did you mean ‘curent’?
+  111 |         if(is_final(current)){
+      |                     ^~~~~~~
+      |                     curent
+sudoku.c:111:21: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:116:27: error: implicit declaration of function ‘get_aj_nodes’; did you mean ‘get_adj_nodes’? [-Werror=implicit-function-declaration]
+  116 |         List* adj_nodes = get_aj_nodes(current);
+      |                           ^~~~~~~~~~~~
+      |                           get_adj_nodes
+sudoku.c:117:9: error: unknown type name ‘ode’; did you mean ‘Node’?
+  117 |         ode* adj_node = first(adj_nodes);
+      |         ^~~
+      |         Node
+sudoku.c:118:27: error: ‘ULL’ undeclared (first use in this function); did you mean ‘NULL’?
+  118 |         while(adj_node != ULL){
+      |                           ^~~
+      |                           NULL
+sudoku.c:107:14: error: unused variable ‘curent’ [-Werror=unused-variable]
+  107 |         Noe* curent = top(S);
+      |              ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+adefce2
