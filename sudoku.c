@@ -73,18 +73,21 @@ int is_valid(Node* n) {
 }
 
 
-List* get_adj_nodes(Node* n) {
+List* get_adj_nodes(Node* n){
     List* list = createList();
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            if (n->sudo[i][j] == 0) {
-                for (int num = 1; num <= 9; num++) {
+    for(int i = 0; i < 9; i++){
+        for(int j = 0; j < 9; j++){
+            if(n->sudo[i][j] == 0){
+                for(int num = 1; num <= 9; num++){
                     Node* new_node = copy(n);
                     new_node->sudo[i][j] = num;
-                    if (is_valid(new_node))
-                        list = addNode(list, new_node);  // Asumiendo que addNode es una función para añadir un nodo a la lista
+                    if(is_valid(new_node)){
+                        pushBack(list, new_node);
+                    } else {
+                        free(new_node);  // Libera la memoria si el nodo no es válido
+                    }
                 }
-                return list;  // Retornamos la lista después de encontrar y llenar la primera casilla vacía
+                return list;  // Retorna la lista después de encontrar y llenar la primera casilla vacía
             }
         }
     }
