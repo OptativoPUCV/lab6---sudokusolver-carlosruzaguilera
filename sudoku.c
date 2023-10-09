@@ -43,8 +43,32 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
-
+int is_valid(Node* n) {
+    int marks[10];
+    for (int i = 0; i < 9; i++) {
+        memset(marks, 0, sizeof(marks));  // Limpiar marcas para cada fila
+        for (int j = 0; j < 9; j++) {  // Validación de filas
+            if (n->sudo[i][j] != 0 && marks[n->sudo[i][j]] == 1)
+                return 0;
+            marks[n->sudo[i][j]] = 1;
+        }
+        memset(marks, 0, sizeof(marks));  // Limpiar marcas para cada columna
+        for (int j = 0; j < 9; j++) {  // Validación de columnas
+            if (n->sudo[j][i] != 0 && marks[n->sudo[j][i]] == 1)
+                return 0;
+            marks[n->sudo[j][i]] = 1;
+        }
+    }
+    for (int k = 0; k < 9; k++) {
+        memset(marks, 0, sizeof(marks));  
+        for(int p = 0; p < 9; p++) {
+            int i = 3*(k/3) + (p/3);
+            int j = 3*(k%3) + (p%3);
+            if (n->sudo[i][j] != 0 && marks[n->sudo[i][j]] == 1)
+                return 0;
+            marks[n->sudo[i][j]] = 1;
+        }
+    }
     return 1;
 }
 
