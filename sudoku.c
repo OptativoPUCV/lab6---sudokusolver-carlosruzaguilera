@@ -100,11 +100,11 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-    Stack* S = createtck();
+    Stack* S = createStack();
     push(S, initial);
 
     while(!is_empty(S)){
-        Noe* curent = top(S);
+        Node* current = top(S);
         pop(S);
         (*cont)++;
 
@@ -113,11 +113,11 @@ Node* DFS(Node* initial, int* cont){
             return current;
         }
 
-        List* adj_nodes = get_aj_ndes(current);
-        ode* adj_node = first(adj_nodes);
-        while(adj_node != ULL){
+        List* adj_nodes = get_adj_nodes(current);
+        Node* adj_node = first(adj_nodes);
+        while(adj_node != NULL){
             push(S, adj_node);
-            adj_node = nxt(adj_nodes);
+            adj_node = next(adj_nodes);
         }
         clean(adj_nodes);  // Limpiar la lista de nodos adyacentes
         free(current);  // Liberar el nodo actual
@@ -125,6 +125,7 @@ Node* DFS(Node* initial, int* cont){
 
     return NULL;
 }
+
 
 
 
