@@ -104,7 +104,7 @@ Node* DFS(Node* initial, int* cont){
     push(S, initial);
 
     while(!is_empty(S)){
-        Node* current = top(S);
+        Node* curent = top(S);
         pop(S);
         (*cont)++;
 
