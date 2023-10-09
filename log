@@ -8,3 +8,22 @@ Mon 09 Oct 2023 01:18:10 AM UTC:
  tests:  3|4
 total_score: 20/70
 46c88d7
+Mon 09 Oct 2023 01:19:12 AM UTC: 
+ sudoku.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:77:18: error: implicit declaration of function ‘createLit’; did you mean ‘createList’? [-Werror=implicit-function-declaration]
+   77 |     List* list = createLit();
+      |                  ^~~~~~~~~
+      |                  createList
+sudoku.c:77:18: error: initialization of ‘List *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:85:32: error: implicit declaration of function ‘addNode’ [-Werror=implicit-function-declaration]
+   85 |                         list = addNode(list, new_node);  // Asumiendo que addNode es una función para añadir un nodo a la lista
+      |                                ^~~~~~~
+sudoku.c:85:30: error: assignment to ‘List *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+   85 |                         list = addNode(list, new_node);  // Asumiendo que addNode es una función para añadir un nodo a la lista
+      |                              ^
+cc1: all warnings being treated as errors
+Compilation failed
+d206ddf
