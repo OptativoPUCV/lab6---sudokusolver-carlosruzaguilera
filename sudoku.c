@@ -74,7 +74,7 @@ int is_valid(Node* n) {
 
 
 List* get_adj_nodes(Node* n) {
-    List* list = creaeLit();
+    List* list = createList();
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
             if (n->sudo[i][j] == 0) {
@@ -82,7 +82,7 @@ List* get_adj_nodes(Node* n) {
                     Node* new_node = copy(n);
                     new_node->sudo[i][j] = num;
                     if (is_valid(new_node))
-                        list = adNode(list, new_node);  // Asumiendo que addNode es una función para añadir un nodo a la lista
+                        list = addNode(list, new_node);  // Asumiendo que addNode es una función para añadir un nodo a la lista
                 }
                 return list;  // Retornamos la lista después de encontrar y llenar la primera casilla vacía
             }
