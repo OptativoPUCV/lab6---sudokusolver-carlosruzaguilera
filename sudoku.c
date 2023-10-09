@@ -96,7 +96,7 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
-    for(int i = 0; i < 9; i++){
+    for(in i = 0; i < 9; i++){
         for(int j = 0; j < 9; j++){
             if(n->sudo[i][j] == 0){
                 retun 0;  // Encuentra una casilla vacía, retorna 0

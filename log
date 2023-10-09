@@ -411,3 +411,22 @@ sudoku.c:102:22: error: expected ‘;’ before numeric constant
       |                      ;
 Compilation failed
 b59f8df
+Mon 09 Oct 2023 01:34:38 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_final’:
+sudoku.c:99:9: error: unknown type name ‘in’; did you mean ‘int’?
+   99 |     for(in i = 0; i < 9; i++){
+      |         ^~
+      |         int
+sudoku.c:102:17: error: ‘retun’ undeclared (first use in this function)
+  102 |                 retun 0;  // Encuentra una casilla vacía, retorna 0
+      |                 ^~~~~
+sudoku.c:102:17: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:102:22: error: expected ‘;’ before numeric constant
+  102 |                 retun 0;  // Encuentra una casilla vacía, retorna 0
+      |                      ^~
+      |                      ;
+Compilation failed
+496b7d4
