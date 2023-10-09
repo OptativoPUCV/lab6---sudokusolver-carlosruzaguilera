@@ -46,3 +46,22 @@ sudoku.c:85:30: error: assignment to ‘List *’ from ‘int’ makes pointer f
 cc1: all warnings being treated as errors
 Compilation failed
 12aa296
+Mon 09 Oct 2023 01:19:34 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:77:18: error: implicit declaration of function ‘creaeLit’; did you mean ‘createList’? [-Werror=implicit-function-declaration]
+   77 |     List* list = creaeLit();
+      |                  ^~~~~~~~
+      |                  createList
+sudoku.c:77:18: error: initialization of ‘List *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:85:32: error: implicit declaration of function ‘adNode’ [-Werror=implicit-function-declaration]
+   85 |                         list = adNode(list, new_node);  // Asumiendo que addNode es una función para añadir un nodo a la lista
+      |                                ^~~~~~
+sudoku.c:85:30: error: assignment to ‘List *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+   85 |                         list = adNode(list, new_node);  // Asumiendo que addNode es una función para añadir un nodo a la lista
+      |                              ^
+cc1: all warnings being treated as errors
+Compilation failed
+88cccf9
