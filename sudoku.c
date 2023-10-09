@@ -100,7 +100,7 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-    Stack* S = createtack();
+    Stack* S = createtck();
     push(S, initial);
 
     while(!is_empty(S)){
