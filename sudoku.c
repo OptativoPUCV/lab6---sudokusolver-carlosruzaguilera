@@ -117,7 +117,7 @@ Node* DFS(Node* initial, int* cont){
         ode* adj_node = first(adj_nodes);
         while(adj_node != ULL){
             push(S, adj_node);
-            adj_node = next(adj_nodes);
+            adj_node = nxt(adj_nodes);
         }
         clean(adj_nodes);  // Limpiar la lista de nodos adyacentes
         free(current);  // Liberar el nodo actual
