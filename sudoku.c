@@ -82,7 +82,7 @@ List* get_adj_nodes(Node* n) {
                     Node* new_node = copy(n);
                     new_node->sudo[i][j] = num;
                     if (is_valid(new_node))
-                        list = addNode(list, new_node);  // Asumiendo que addNode es una función para añadir un nodo a la lista
+                        list = adNode(list, new_node);  // Asumiendo que addNode es una función para añadir un nodo a la lista
                 }
                 return list;  // Retornamos la lista después de encontrar y llenar la primera casilla vacía
             }
